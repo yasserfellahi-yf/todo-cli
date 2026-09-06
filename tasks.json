@@ -1,6 +1,10 @@
 [
   {
-    "task": "gym",
+    "task": "work",
+    "done": false
+  },
+  {
+    "task": "pray",
     "done": false
   },
   {
@@ -8,7 +12,7 @@
     "done": false
   },
   {
-    "task": "pray",
+    "task": "yeps",
     "done": false
   }
 ]

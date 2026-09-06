@@ -21,22 +21,29 @@ def show_menu():
     print("2. List tasks")
     print("3. Mark task as done")
     print("4. Delete task")
-    print("5. Exit")
+    print("5. Clear completed tasks")
+    print("6. Exit")
 
 def add_task():
-    task = input("Enter the task: ")
+    task = input("Enter the task: ").strip()
+    if task == "":
+        print("Task cannot be empty.")
+        return
     tasks.append({"task": task, "done": False})
     save_tasks()
-    print("Task added!")
+    print("Task added successfully!")
 
 def list_tasks():
     if len(tasks) == 0:
         print("No tasks yet.")
-    else:
-        print("\nYour tasks:")
-        for i, item in enumerate(tasks, 1):
-            status = "[x]" if item["done"] else "[ ]"
-            print(f"{i}. {status} {item['task']}")
+        return
+
+    print("\nYour tasks:")
+    print("-" * 30)
+    for i, item in enumerate(tasks, 1):
+        status = "[x]" if item["done"] else "[ ]"
+        print(f"{i}. {status} {item['task']}")
+    print("-" * 30)
 
 def mark_done():
     list_tasks()
@@ -68,6 +75,14 @@ def delete_task():
     except:
         print("Please enter a valid number.")
 
+def clear_completed():
+    global tasks
+    before = len(tasks)
+    tasks = [item for item in tasks if not item["done"]]
+    after = len(tasks)
+    save_tasks()
+    print(f"Cleared {before - after} completed task(s).")
+
 def main():
     load_tasks()
     while True:
@@ -83,6 +98,8 @@ def main():
         elif choice == "4":
             delete_task()
         elif choice == "5":
+            clear_completed()
+        elif choice == "6":
             print("Goodbye!")
             break
         else:
