@@ -1,0 +1,14 @@
+[
+  {
+    "task": "gym",
+    "done": false
+  },
+  {
+    "task": "work",
+    "done": false
+  },
+  {
+    "task": "pray",
+    "done": false
+  }
+]

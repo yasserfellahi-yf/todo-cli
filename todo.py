@@ -1,4 +1,19 @@
+import json
+
+FILENAME = "tasks.json"
 tasks = []
+
+def load_tasks():
+    global tasks
+    try:
+        with open(FILENAME, "r") as file:
+            tasks = json.load(file)
+    except:
+        tasks = []
+
+def save_tasks():
+    with open(FILENAME, "w") as file:
+        json.dump(tasks, file, indent=2)
 
 def show_menu():
     print("\n=== Todo CLI ===")
@@ -11,6 +26,7 @@ def show_menu():
 def add_task():
     task = input("Enter the task: ")
     tasks.append({"task": task, "done": False})
+    save_tasks()
     print("Task added!")
 
 def list_tasks():
@@ -30,6 +46,7 @@ def mark_done():
         number = int(input("Enter task number to mark as done: "))
         if 1 <= number <= len(tasks):
             tasks[number - 1]["done"] = True
+            save_tasks()
             print("Task marked as done!")
         else:
             print("Invalid number.")
@@ -44,6 +61,7 @@ def delete_task():
         number = int(input("Enter task number to delete: "))
         if 1 <= number <= len(tasks):
             removed = tasks.pop(number - 1)
+            save_tasks()
             print(f"Deleted: {removed['task']}")
         else:
             print("Invalid number.")
@@ -51,6 +69,7 @@ def delete_task():
         print("Please enter a valid number.")
 
 def main():
+    load_tasks()
     while True:
         show_menu()
         choice = input("Enter your choice: ")
