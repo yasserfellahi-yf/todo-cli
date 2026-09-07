@@ -11,15 +11,6 @@ A simple command-line Todo application written in Python.
 - Clear completed tasks
 - Tasks are saved permanently in a file
 
-## How to Run
-
-1. Make sure you have Python installed
-2. Open a terminal in this folder
-3. Run the following command:
-
-```bash
-py todo.py
-
 ## Project Structure
 
 - todo.py → Main program
@@ -38,3 +29,13 @@ py todo.py
 - Edit existing tasks
 - Due dates
 - Better user interface
+
+## How to Run
+
+1. Make sure you have Python installed
+2. Open a terminal in this folder
+3. Run the following command:
+
+```bash
+py todo.py
+
