@@ -1,12 +1,40 @@
-# Todo-cli
-A simple command-line todo list application in python
+# Todo CLI
 
-## Features (planned)
-- Add tasks
-- List tasks
+A simple command-line Todo application written in Python.
+
+## Features
+
+- Add new tasks
+- List all tasks
 - Mark tasks as done
 - Delete tasks
+- Clear completed tasks
+- Tasks are saved permanently in a file
 
-## How to run
+## How to Run
+
+1. Make sure you have Python installed
+2. Open a terminal in this folder
+3. Run the following command:
+
 ```bash
-python todo.py
+py todo.py
+
+## Project Structure
+
+- todo.py → Main program
+- tasks.json → File where tasks are saved
+- README.md → Project description
+
+## What I Learned
+
+- Working with lists and dictionaries in Python
+- Saving and loading data using JSON
+- Building a simple menu-driven program
+- Using Git and GitHub
+
+## Future Improvements
+
+- Edit existing tasks
+- Due dates
+- Better user interface
